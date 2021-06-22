@@ -25,7 +25,7 @@ const submitBtn = document.querySelector('.submit');
 const clearAllBtn = document.querySelector('.clear_all');
 
 const noteNew = document.querySelector('#note_new');
-const noteDetailNew = document.querySelector('#note_detail_new');
+const modalDetailNew = document.querySelector('#modal_detail_new');
 
 
 //🍀
@@ -34,9 +34,10 @@ const noteDetailNew = document.querySelector('#note_detail_new');
 2. submit- title, note - create
 3. save local storage : so that I can use the data for detail div
 4. click btn in created note  - detail, delete
-6. detail btn - show whole note
-8. create delete btn in detail note and give function
-10 clear all button
+6. click detail btn which is created- show whole note
+8. click delete btn which is created- delete parent node
+10. create delete btn in detail modal and hide the modal
+12 clear all button
 */
 
 //🍀 2. title, note - create
@@ -50,8 +51,8 @@ function run(e){
 
     //🦄.substring();
     note.innerHTML=`    
-        <h2>${titleInput.value.substring(0,20)}</h2> 
-        <div class="content">${noteInput.value.substring(0,50)}...</div>
+        <h2 class="note_title">${titleInput.value.substring(0,20)}</h2> 
+        <div class="note_content">${noteInput.value.substring(0,50)}...</div>
         <button class="myButton2 detail">view detail</button>
         <button class="myButton2 delete">delete</button>    
     `
@@ -61,46 +62,80 @@ function run(e){
     //🍀3. save local storage : so that I can use the data for detail div
 
     //🍀button-detail
-    let detailBtn =  document.querySelector('.detail');
-    detailBtn.addEventListener('click',(e)=>{
+    // let detailBtn =  document.querySelector('.detail');
+    // detailBtn.addEventListener('click',(e)=>{
 
-        e.preventDefault();
+    //     e.preventDefault();
 
-        let note_detail = document.createElement('div');
-        note_detail.classList.add('note_detail_container');
+    //     let note_detail = document.createElement('div');
+    //     note_detail.classList.add('note_detail_container');
 
-        note_detail.innerHTML=`
-            <h2>${titleInput.value}</h2> 
-            <div class="content">${noteInput.value}...</div>
-        `;
-       noteDetailNew.append(note_detail);
+    //     note_detail.innerHTML=`
+    //         <h2>${titleInput.value}</h2> 
+    //         <div class="content">${noteInput.value}...</div>
+    //     `;
+    //    noteDetailNew.append(note_detail);
 
-    });
+    // });
 
+    //🍀button-delete
+    // let deleteBtn =  document.querySelector('.delete');
+    
+    // deleteBtn.addEventListener('click',(e)=>{
+    //     e.target.currentNode.remove();        
+    // });
+    
     titleInput.value="" ;
-    noteInput.value="" ;
+    noteInput.value="" ;    
+}
+
+
+//🍀note_new : event bubbling, find e.target button
+
+noteNew.addEventListener('click',(e)=>{
+    // if (e.target.classList.contains('detail')) {
+       
+    //     let currentNode = e.target.closest('.note')
+    //     let noteTitle = currentNode.querySelector('.note_title').textContent;
+    //     let noteContent = currentNode.querySelector('.note_content').textContent;
+
+    //     activeModal(noteTitle,noteContent);
+    // } 
+    
+    // 🍉js 8. click delete btn which is created- delete parent node
+    if (e.target.classList.contains('delete')) {
+        e.target.parentNode.remove();        
+        
+    }   
+
+});
+
+function activeModal(a,b) {
     
 }
 
-//🍀3 reload
+//🍀 🍉js 6. detail - modal
+/* 
+🍄알고리즘)
+
+2. modal div 만들어둠
+
+4. js로 css, html textcontent 넣으면 화면에 띄워짐  */
+
+
+//🍀
+
+//🍀
+
+//🍀
+
+//🍀
+
+//🍀
+
+//🍀12 reload
 
 clearAllBtn.addEventListener('click',run_clearall);
 function run_clearall() {
    window.location.reload();
 }
-
-//🍀
-
-//🍀
-
-//🍀
-
-//🍀
-
-//🍀
-
-//🍀
-
-//🍀
-
-//🍀

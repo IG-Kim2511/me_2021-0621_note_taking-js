@@ -197,3 +197,26 @@ animation: drop-letters 30s 10s infinite;
     border: var(--color-light-white) 1px solid;
     padding-bottom: 30rem;
 }
+
+
+
+/* 🍀modal_detail_new */
+
+.modal_detail_new{
+    position: fixed;
+left: 0;
+top: 0;
+bottom: 0;
+right: 0;
+
+display: grid;
+
+place-items: center;
+opacity: 1;
+
+
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-dark-white);
+
+}
