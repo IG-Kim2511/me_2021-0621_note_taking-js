@@ -8,35 +8,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
-        <div>
-            <h1>Note Taker</h1>
+    <div class="whole-container">
+        <section>
+            <div class="logo_container">            
+                <div class="logo">
+                    <h1>
+                    <span class="center">n</span>
+                    <span class="center">o</span>
+                    <span class="center">t</span>
+                    <span class="center">e</span>
+                    <span class="center">-</span>
+                    <span class="center">t</span>
+                    <span class="center">a</span>
+                    <span class="center">k</span>
+                    <span class="center">e</span>
+                    <span class="center">r</span>
+                    </h1>
+                </div>
+            </div>        
+            <div class="logo_empty"></div>
+
             <h3>Add a new note : </h3>
-        </div>
 
-        <div class="title_container">
-            <h3>Title</h3>
-            <input type="text">
-        </div>
-        <div class="note_container">
-            <h3>Note</h3>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-        </div>
+            <div class="title_container">
+                <h3>Title</h3>
+                <input type="text" class="title_input">
+            </div>
+            <div class="note_container">
+                <h3>Note</h3>
+                <textarea name="" id="" cols="60" rows="20" class="note_input"></textarea>
+            </div>
 
-        <button>Submit</button>
-    </section>
+            <button class="myButton submit">Submit</button>
+        </section>
 
-    <section>
+        <section>
         <!--  👉js create
-        <div class="taker_container">
-            <h2>title</h2>
-            <div class="content"></div>
-            <button class="detalil">view detail</button>
-            <button class="delete">delete</button>
-        </div>
-     -->
-    </section>
+            <div class="taker_container">
+                <h2>title</h2>
+                <div class="content"></div>
+                <button class="detalil">view detail</button>
+                <button class="delete">delete</button>
+            </div>
+        -->
+        </section>
 
+        <section>
+        
+        </section>
+    </div>
     
     <script src="./script.js"></script>
 </body>

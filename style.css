@@ -1,0 +1,173 @@
+:root{ 
+    --color-naver: #0eae44;
+    --color-facebook: #3b5998;
+    --color-netflix: #d61319;
+    --color-kakao: #fee101;
+  
+    --color-white: #ffffff;
+    --color-light-white: #f3f3f3;
+    --color-light2-white: #eeeeee;
+    --color-dark-white: #bdbdbd;
+  
+    --color-black: #000000;
+    --color-grey: #616161;
+    --color-dark-grey: #4d4d4d;
+    --color-light-grey: #7c7979;
+  
+    --color-red: #e01541;
+    --color-blue: #446df6;
+    --color-green: #33ca7f;
+  
+    /* Size :basic 4px=0.5rem  */
+    --border-basic-radius: 0.5rem;    
+  
+    /* Animation :basic 300ms=0.3s  */  
+    --animation_basic-duration: 0.3s;
+}
+
+html{
+    
+
+}
+
+body{
+    margin: auto;
+    padding: 0;
+    max-width: 1000px;
+    text-align: center;    
+}
+
+*{ 
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+li{
+    list-style: none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* 🍀myButton  */
+.myButton {
+    box-shadow: inset 0px 39px 0px -24px var(--color-naver);
+    background-color: var(--color-naver);
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+  
+    font-size: 15px;
+    padding: 6px 15px;
+    text-decoration: none;
+  }
+  .myButton:hover {
+    opacity: 0.6;
+  }
+  .myButton:active {
+    position: relative;
+    top: 1px;
+  }
+  
+/* <logo> */
+.logo_container{
+    position: relative;
+}
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8rem;
+}
+
+.logo_empty{
+    margin-top: 10rem;
+}
+
+.logo h1 {
+display: flex;
+}
+
+.logo h1 span {
+font-size: 2rem;
+
+font-weight: 900;
+color: var(--color-naver);
+text-transform: uppercase;
+margin: 0.5rem;
+border-radius: 50%;
+/* 
+width: 3.5rem;
+height: 3.5rem;
+border: solid 1px var(--color-naver); */
+}
+
+/* T: keyframes */
+
+.logo h1 span:nth-child(1) {
+    animation: drop-letters 30s 1s infinite;
+}
+.logo h1 span:nth-child(2) {
+animation: drop-letters 30s 2s infinite;
+}
+.logo h1 span:nth-child(3) {
+animation: drop-letters 30s 3s infinite;
+}
+.logo h1 span:nth-child(4) {
+animation: drop-letters 30s 4s infinite;
+}
+.logo h1 span:nth-child(5) {
+animation: drop-letters 30s 5s infinite;
+}
+.logo h1 span:nth-child(6) {
+animation: drop-letters 30s 6s infinite;
+}
+.logo h1 span:nth-child(7) {
+animation: drop-letters 30s 7s infinite;
+}
+.logo h1 span:nth-child(8) {
+animation: drop-letters 30s 8s infinite;
+}
+.logo h1 span:nth-child(9) {
+animation: drop-letters 30s 9s infinite;
+}
+.logo h1 span:nth-child(10) {
+animation: drop-letters 30s 10s infinite;
+}
+
+@keyframes drop-letters {
+0% {
+    transform: translateY(0);
+}
+10% {
+    transform: translateY(0);
+}
+20% {
+    transform: translatey(-50%);
+}
+30% {
+    transform: translateY(0);
+}
+100% {
+    transform: translateY(0);
+}
+}
+
+.whole-container{
+    background: var(--color-light-white);
+    border: var(--color-light-white) 1px solid;
+}
