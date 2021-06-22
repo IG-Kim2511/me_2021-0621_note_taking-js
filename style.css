@@ -170,4 +170,5 @@ animation: drop-letters 30s 10s infinite;
 .whole-container{
     background: var(--color-light-white);
     border: var(--color-light-white) 1px solid;
+    padding-bottom: 30rem;
 }
