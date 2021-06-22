@@ -26,6 +26,7 @@ const clearAllBtn = document.querySelector('.clear_all');
 
 const noteNew = document.querySelector('#note_new');
 
+//🍀
 
 /* 🍄Algorithm) 
 2. submit- title, note - create
@@ -38,24 +39,21 @@ const noteNew = document.querySelector('#note_new');
 //🍀 2. title, note - create
 submitBtn.addEventListener('click',run);
 
-submitBtn.addEventListener('keypress', (e)=> {
-    if (e.key==='enter') {
-        run;        
-    }    
-})
-
 function run(e){
     e.preventDefault();
        
     let note = document.createElement('div');
     note.classList.add('note_new_container');
     note.innerHTML=`    
-        <h2>title</h2>
-        <div class="content"></div>
-        <button class="detalil">view detail</button>
-        <button class="delete">delete</button>    
+        <h2>${titleInput.value}</h2>
+        <div class="content">${noteInput.value}</div>
+        <button class="myButton2 detail">view detail</button>
+        <button class="myButton2 delete">delete</button>    
     `
-    noteNew.append(note);    
+    noteNew.append(note);   
+
+    titleInput.value="" ;
+    noteInput.value="" ;
 }
 
 //🍀3 reload
