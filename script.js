@@ -68,6 +68,7 @@ function run(e){
     console.log(newNote)
        
     addNoteToList(newNote);
+    
 
     //🍀3. save local storage : so that I can use the data for detail div  ....🌊
 
@@ -88,8 +89,7 @@ function addNoteToList(newNote) {
         <div class="note_content">${newNote.body.substring(0,30)}</div>
         <button class="myButton2 detail">view detail</button>
         <button class="myButton2 delete">delete</button>    
-    `;
-    
+    `;    
 }
 
 
@@ -106,20 +106,15 @@ noteNew.addEventListener('click',(e)=>{
     //🦄.textContent; / .closest
     if (e.target.classList.contains('detail')) {
 
-        let currentNote =  e.target.closest('#note_new');
-
-        let noteTitle = currentNote.e.target.closest('.note_title').textContent;
-
-        let noteContent = currentNote.e.target.closest('.note_content').textContent;
-
+        activeModal;
     }   
 
 });
 
-function activeModal(a,b) {
+function activeModal(newNote) {
 
-    document.querySelector('.modal_title').innerHTML(a);
-    document.querySelector('.modal_content').innerHTML(b);
+    // document.querySelector('.modal_title').innerHTML(newNote.title);
+    // document.querySelector('.modal_content').innerHTML(newNote.body);
     
     modalDetailContainer.classList.add('opacity');
 
