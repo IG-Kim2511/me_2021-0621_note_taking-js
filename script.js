@@ -52,8 +52,8 @@ function run(e){
 
     //🦄.substring();
     note.innerHTML=`    
-        <h2 class="note_title">${titleInput.value}</h2> 
-        <div class="note_content">${noteInput.value}</div>
+        <h2 class="note_title">${titleInput.value.substring(0,20)}</h2> 
+        <div class="note_content">${noteInput.value.substring(0,30)}</div>
         <button class="myButton2 detail">view detail</button>
         <button class="myButton2 delete">delete</button>    
     `
