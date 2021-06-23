@@ -202,21 +202,25 @@ animation: drop-letters 30s 10s infinite;
 
 /* 🍀modal_detail_new */
 
-.modal_detail_new{
+.modal_detail_container{
     position: fixed;
-left: 0;
-top: 0;
-bottom: 0;
-right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 
-display: grid;
+    display: block;
+    margin: auto;
 
-place-items: center;
-opacity: 1;
-
+    place-items: center;
+    opacity: 1;
 
     width: 3rem;
     height: 3rem;
-    background-color: var(--color-dark-white);
 
+    opacity: 0;
+}
+
+.opacity{
+    opacity: 1 !important;
 }
