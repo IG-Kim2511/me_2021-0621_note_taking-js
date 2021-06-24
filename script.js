@@ -1,22 +1,4 @@
 'use strict';
-/* 
-🍀🍈🍓🎃 섹터 나눔 마크
-🍉 js-6
-
-🦄 point, 알아낸것
-🚀 공식 (알고리즘 상위호환)
-🍄Algorithm)  알고리즘 (코딩 순서, 소프트코딩)
-📌⚡ 중요사항
-
-🐞 bug
-❓ question, bug
-
-🌊 다음에 할거
-
-⚽ (hard-coding) (soft-coding)
-💊 way-1 way-2 way-3 
-*/
-
 
 //🍀
 const titleInput = document.querySelector('.title_input');
@@ -46,8 +28,6 @@ const modalDelete = document.querySelector('.modal_delete');
 10. create delete btn in detail modal and hide the modal
 12 clear all button
 */
-
-
 
 //🍀 🦄js 1 class , 🍄알고리즘, class이용해서 밖으로 데이터 빼서,  object생성
 // 🦄 Math.floor(Math.random()*1000);
@@ -96,9 +76,7 @@ function addNoteToList(newNote) {
     `;    
 
 
-
 //🍀note_new : event bubbling, find e.target button
-
 
 console.log(newNote);
 
@@ -120,7 +98,15 @@ noteNew.addEventListener('click',(e)=>{
     }); 
 }
 
-// 🐞when click each btn,  modal show formal modal  content
+/*  .........🌊
+20. 🐞when click each btn,  modal show formal modal  content
+
+30.  click detail, show modal above the e.target detail btn
+
+40. click detail btn, delete data of formal detail btn
+
+*/
+
 
 // 🍉js 6
 function activeModal(a) {    
