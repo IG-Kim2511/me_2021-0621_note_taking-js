@@ -25,10 +25,6 @@
     --animation_basic-duration: 0.3s;
 }
 
-html{
-    
-
-}
 
 body{
     margin: auto;
@@ -60,6 +56,10 @@ li{
     justify-content: center;
     align-items: center;
   }
+
+.relative {
+    position: relative;
+}
 
 /* 🍀myButton  */
 .myButton {
@@ -104,8 +104,6 @@ opacity: 0.6;
 position: relative;
 top: 1px;
 }
-
-
 
   
 /* <logo> */
@@ -199,28 +197,45 @@ animation: drop-letters 30s 10s infinite;
 }
 
 
+.title_input{
+    /* width: 2rem; */
+    height: 3rem;
+}
 
 /* 🍀modal_detail_new */
 
 .modal_detail_container{
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
-    bottom: 0;
-    right: 0;
+    /* bottom: 0;
+    right: 0; */
 
     display: block;
     margin: auto;
 
     place-items: center;
-    opacity: 1;
+    /* opacity: 1; */
 
-    width: 3rem;
-    height: 3rem;
+    width: 30rem;
+    height: 10rem;
 
+    background-color: var(--color-white);
+
+    border: solid var(--color-naver) 1px;
     opacity: 0;
 }
 
-.opacity{
+/* 🍉js6, js8 */
+.modal_show{
     opacity: 1 !important;
+    left: 16rem;
+    bottom: 2rem;
+}
+
+.modal_delete{
+    margin-bottom: 1rem;
+    margin-left: 18rem;
+    /* padding: 1rem; */
+
 }

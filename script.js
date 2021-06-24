@@ -26,7 +26,11 @@ const clearAllBtn = document.querySelector('.clear_all');
 
 const noteNew = document.querySelector('#note_new');
 const modalDetailNew = document.querySelector('#modal_detail_new');
-const modalDetailContainer = document.querySelector('#modal_detail_container');
+
+const modalDetailContainer = document.querySelector('.modal_detail_container');
+const modalTitle = document.querySelector('.modal_title');
+const modalContent = document.querySelector('.modal_content');
+const modalDelete = document.querySelector('.modal_delete');
 
 
 //🍀
@@ -57,6 +61,7 @@ class Note {
     }
 }
 
+
 //🍀 2. title, note - create
 submitBtn.addEventListener('click',run);
 
@@ -67,8 +72,7 @@ function run(e){
     let newNote = new Note(titleInput.value,noteInput.value);
     console.log(newNote)
        
-    addNoteToList(newNote);
-    
+    addNoteToList(newNote);    
 
     //🍀3. save local storage : so that I can use the data for detail div  ....🌊
 
@@ -90,38 +94,48 @@ function addNoteToList(newNote) {
         <button class="myButton2 detail">view detail</button>
         <button class="myButton2 delete">delete</button>    
     `;    
-}
+
 
 
 //🍀note_new : event bubbling, find e.target button
+
+
+console.log(newNote);
 
 noteNew.addEventListener('click',(e)=>{
 
     // 🍉js 8. click delete btn which is created- delete parent node
     if (e.target.classList.contains('delete')) {
         e.target.parentNode.remove();     
+        modalDetailContainer.classList.remove('modal_show'); 
     }   
 
-    // ......🌊  js 6
+    // 🍉js 6. detail - modal
     //🦄.textContent; / .closest
     if (e.target.classList.contains('detail')) {
 
-        activeModal;
-    }   
-
-});
-
-function activeModal(newNote) {
-
-    // document.querySelector('.modal_title').innerHTML(newNote.title);
-    // document.querySelector('.modal_content').innerHTML(newNote.body);
-    
-    modalDetailContainer.classList.add('opacity');
-
-
+        activeModal(newNote);
+        modalDetailContainer.classList.add('modal_show');
+        }  
+    }); 
 }
 
-//🍀 🍉js 6. detail - modal
+// 🐞when click each btn,  modal show formal modal  content
+
+// 🍉js 6
+function activeModal(a) {    
+    document.querySelector('.modal_title').innerHTML= `${a.title}`;
+    document.querySelector('.modal_content').innerHTML = `${a.body}`;
+ }
+
+
+// 🍀js10
+modalDelete.addEventListener('click',()=>{
+    modalDetailContainer.classList.remove('modal_show');
+    modalTitle.innerHTML ="";
+    modalContent.innerHTML ="";
+});
+
 /* 
 🍄알고리즘)
 
