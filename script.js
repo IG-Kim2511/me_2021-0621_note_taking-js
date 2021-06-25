@@ -43,10 +43,16 @@ class Note {
 
 
 //🍀 2. title, note - create
-submitBtn.addEventListener('click',run);
+submitBtn.addEventListener('click',run_first);
 
-function run(e){
+function run_first(e) {
     e.preventDefault();
+    if(titleInput.value.length > 0 && noteInput.value.length > 0 ){
+        run();
+    }    
+}
+ 
+function run(e){  
 
     // 🦄js 1
     let newNote = new Note(titleInput.value,noteInput.value);
