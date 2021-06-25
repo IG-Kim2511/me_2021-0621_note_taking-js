@@ -82,13 +82,17 @@ function addNoteToList(newNote) {
     `;    
 
 
-//🍀note_new : event bubbling, find e.target button
+    //🍀note_new : event bubbling, find e.target button
 
-console.log(newNote);
+    console.log(newNote);
 
-noteNew.addEventListener('click',(e)=>{
+    noteNew.addEventListener('click',(e)=>{
 
     // 🍉js 8. click delete btn which is created- delete parent node
+    /*  🍄알고리즘)
+    2. modal div 만들어둠
+    4. js로 innerHTML, css - modal_show 넣으면 화면에 띄워짐  */
+
     if (e.target.classList.contains('delete')) {
         e.target.parentNode.remove();     
         modalDetailContainer.classList.remove('modal_show'); 
@@ -105,12 +109,10 @@ noteNew.addEventListener('click',(e)=>{
 }
 
 /*  .........🌊
-20. 🐞when click each btn,  modal show formal modal  content
-
 30.  click detail, show modal above the e.target detail btn
+(20. 🐞when click each btn,  modal show formal modal  content)
 
 40. click detail btn, delete data of formal detail btn
-
 */
 
 
@@ -127,14 +129,6 @@ modalDelete.addEventListener('click',()=>{
     modalTitle.innerHTML ="";
     modalContent.innerHTML ="";
 });
-
-/* 
-🍄알고리즘)
-
-2. modal div 만들어둠
-
-4. js로 css, html textcontent 넣으면 화면에 띄워짐  */
-
 
 
 //🍀12 reload
