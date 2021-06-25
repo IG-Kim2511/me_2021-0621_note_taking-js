@@ -142,34 +142,34 @@ border: solid 1px var(--color-naver); */
 /* T: keyframes */
 
 .logo h1 span:nth-child(1) {
-    animation: drop-letters 30s 1s infinite;
+animation: drop-letters 12s 1s infinite;
 }
 .logo h1 span:nth-child(2) {
-animation: drop-letters 30s 2s infinite;
+animation: drop-letters 12s 2s infinite;
 }
 .logo h1 span:nth-child(3) {
-animation: drop-letters 30s 3s infinite;
+animation: drop-letters 12s 3s infinite;
 }
 .logo h1 span:nth-child(4) {
-animation: drop-letters 30s 4s infinite;
+animation: drop-letters 12s 4s infinite;
 }
-.logo h1 span:nth-child(5) {
-animation: drop-letters 30s 5s infinite;
-}
+/* .logo h1 span:nth-child(5) {
+animation: drop-letters 12s 5s infinite;
+} */
 .logo h1 span:nth-child(6) {
-animation: drop-letters 30s 6s infinite;
+animation: drop-letters 12s 6s infinite;
 }
 .logo h1 span:nth-child(7) {
-animation: drop-letters 30s 7s infinite;
+animation: drop-letters 12s 7s infinite;
 }
 .logo h1 span:nth-child(8) {
-animation: drop-letters 30s 8s infinite;
+animation: drop-letters 12s 8s infinite;
 }
 .logo h1 span:nth-child(9) {
-animation: drop-letters 30s 9s infinite;
+animation: drop-letters 12s 9s infinite;
 }
 .logo h1 span:nth-child(10) {
-animation: drop-letters 30s 10s infinite;
+animation: drop-letters 12s 10s infinite;
 }
 
 @keyframes drop-letters {
@@ -243,5 +243,4 @@ animation: drop-letters 30s 10s infinite;
     margin-bottom: 1rem;
     margin-left: 18rem;
     /* padding: 1rem; */
-
 }
