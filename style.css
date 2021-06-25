@@ -202,6 +202,10 @@ animation: drop-letters 30s 10s infinite;
     height: 3rem;
 }
 
+.note_alert{
+    color: var(--color-red);
+}
+
 /* 🍀modal_detail_new */
 
 .modal_detail_container{

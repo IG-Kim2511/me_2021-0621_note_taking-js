@@ -3,6 +3,8 @@
 //🍀
 const titleInput = document.querySelector('.title_input');
 const noteInput = document.querySelector('.note_input');
+const noteAlert = document.querySelector('.note_alert');
+
 const submitBtn = document.querySelector('.submit');
 const clearAllBtn = document.querySelector('.clear_all');
 
@@ -45,13 +47,20 @@ class Note {
 //🍀 2. title, note - create
 submitBtn.addEventListener('click',run_first);
 
+// length check , noteAlert
 function run_first(e) {
     e.preventDefault();
+
+    noteAlert.innerHTML='';
+
     if(titleInput.value.length > 0 && noteInput.value.length > 0 ){
         run();
-    }    
+    }else{
+        noteAlert.innerHTML='fill the title or note please';
+    }
 }
- 
+
+// run 
 function run(e){  
 
     // 🦄js 1
