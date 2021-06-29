@@ -68,15 +68,13 @@ function run(e){
     console.log(newNote)
        
     addNoteToList(newNote);    
-
-    //🍀3. save local storage : so that I can use the data for detail div  ....🌊
-
+ 
     titleInput.value="" ;
     noteInput.value="" ;       
 }
 
 //🌱js 2-2. note - create, innerHTML
-function addNoteToList(newNote) {
+function addNoteToList(a_newNote) {
     
     let note = document.createElement('div');
     note.classList.add('note_new_container');    
@@ -84,17 +82,16 @@ function addNoteToList(newNote) {
 
     //🦄.substring();
     note.innerHTML=`    
-        <span hidden >${newNote.id}</span>
-        <h2 class="note_title">${newNote.title.substring(0,20)}</h2> 
-        <div class="note_content">${newNote.body.substring(0,30)}</div>
+        <span hidden >${a_newNote.id}</span>
+        <h2 class="note_title">${a_newNote.title.substring(0,20)}</h2> 
+        <div class="note_content">${a_newNote.body.substring(0,30)}</div>
         <button class="myButton2 detail">view detail</button>
         <button class="myButton2 delete">delete</button>    
     `;    
 
-
     //🍀note_new : event bubbling, find e.target button
 
-    console.log(newNote);
+    console.log(a_newNote);
 
     noteNew.addEventListener('click',(e)=>{
 
@@ -112,7 +109,7 @@ function addNoteToList(newNote) {
     //🦄.textContent; / .closest
     if (e.target.classList.contains('detail')) {
 
-        activeModal(newNote);
+        activeModal(a_newNote);
         modalDetailContainer.classList.add('modal_show');
         }  
     }); 
@@ -121,15 +118,15 @@ function addNoteToList(newNote) {
 /*  .........🌊
 30.  click detail, show modal above the e.target detail btn
 (20. 🐞when click each btn,  modal show formal modal  content)
-
+(make different class object for each content or button which I clicked)
 40. click detail btn, delete data of formal detail btn
 */
 
 
 // 🍉js 6
-function activeModal(a) {    
-    document.querySelector('.modal_title').innerHTML= `${a.title}`;
-    document.querySelector('.modal_content').innerHTML = `${a.body}`;
+function activeModal(a_newNote) {    
+    document.querySelector('.modal_title').innerHTML= `${a_newNote.title}`;
+    document.querySelector('.modal_content').innerHTML = `${a_newNote.body}`;
  }
 
 
