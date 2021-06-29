@@ -33,7 +33,7 @@ const modalDelete = document.querySelector('.modal_delete');
 
 //🍀 🦄js 1 class , 🍄알고리즘, class이용해서 밖으로 데이터 빼서,  object생성
 // 🦄 Math.floor(Math.random()*1000);
-
+// ...🌊 class object..새로 대체안되고, id값 부여해서 새로 추가되게 하기
 class Note {
     constructor(a,b){
         this.title = a;
@@ -72,7 +72,7 @@ function run(e){
     //🍀3. save local storage : so that I can use the data for detail div  ....🌊
 
     titleInput.value="" ;
-    noteInput.value="" ;    
+    noteInput.value="" ;       
 }
 
 //🌱js 2-2. note - create, innerHTML
@@ -84,6 +84,7 @@ function addNoteToList(newNote) {
 
     //🦄.substring();
     note.innerHTML=`    
+        <span hidden >${newNote.id}</span>
         <h2 class="note_title">${newNote.title.substring(0,20)}</h2> 
         <div class="note_content">${newNote.body.substring(0,30)}</div>
         <button class="myButton2 detail">view detail</button>
@@ -132,7 +133,7 @@ function activeModal(a) {
  }
 
 
-// 🍀js10
+// 🍀js 10
 modalDelete.addEventListener('click',()=>{
     modalDetailContainer.classList.remove('modal_show');
     modalTitle.innerHTML ="";
@@ -146,5 +147,8 @@ clearAllBtn.addEventListener('click',run_clearall);
 function run_clearall() {
    window.location.reload();
 }
+
+
+
 
 
