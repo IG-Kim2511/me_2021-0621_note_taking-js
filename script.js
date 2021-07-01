@@ -20,7 +20,8 @@ const modalDelete = document.querySelector('.modal_delete');
 //🍀
 
 /* 🍄Algorithm) 
-1. class , 
+0. class , 
+1. DOMContentLoaded, focus
 2. submit- title,
 2-2. note - create
 3. save local storage : so that I can use the data for detail div
@@ -31,7 +32,7 @@ const modalDelete = document.querySelector('.modal_delete');
 12 clear all button
 */
 
-//🍀 🦄js 1 class , 🍄알고리즘, class이용해서 밖으로 데이터 빼서,  object생성
+//🍀 🦄js 0 class , 🍄알고리즘, class이용해서 밖으로 데이터 빼서,  object생성
 // 🦄 Math.floor(Math.random()*1000);
 // ...🌊 class object..새로 대체안되고, id값 부여해서 새로 추가되게 하기
 class Note {
@@ -42,6 +43,17 @@ class Note {
         console.log(this.id);
     }
 }
+
+/*🍀 🦄js 1 DOMContentLoaded
+load – DOM 트리를 만드는 게 완성+ 이미지등등 모두 불러오는 것이 끝났을 때 발생
+DOMContentLoaded – 브라우저가 HTML을 전부 읽고 DOM 트리를 완성하는 즉시 발생
+unload / beforeunload  – 사용자가 페이지를 떠날 때 발생
+ */
+//🦄js 1-2 .focus() : open했을때 input에 커서가 깜빡이면서 이미 타이핑할 준비가 되어있음
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    titleInput.focus();
+});
 
 
 //🍀 2. title, note - create
@@ -62,8 +74,11 @@ function run_first(e) {
 
 // run 
 function run(e){  
+    
 
-    // 🦄js 1
+    titleInput.focus();
+
+    // 🦄js 0
     let newNote = new Note(titleInput.value,noteInput.value);
     console.log(newNote)
        
