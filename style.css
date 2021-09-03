@@ -204,14 +204,15 @@ animation: drop-letters 12s 10s infinite;
 
 .note_alert{
     color: var(--color-red);
+    transform: translate(1px 1px);
 }
 
 /* 🍀modal_detail_new */
 
 .modal_detail_container{
-    position: absolute;
+    /* position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 0; */
 
     display: block;
     margin: auto;
@@ -222,8 +223,9 @@ animation: drop-letters 12s 10s infinite;
     width: 30rem;     
 
     background-color: var(--color-white);
-
     border: solid var(--color-naver) 1px;
+
+    /* js */
     z-index: -1;
     opacity: 0;
 }

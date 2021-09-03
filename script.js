@@ -32,32 +32,23 @@ const modalDelete = document.querySelector('.modal_delete');
 12 clear all button
 */
 
-//🍀 🦄js 0 class , 🍄알고리즘, class이용해서 밖으로 데이터 빼서,  object생성
-// 🦄 Math.floor(Math.random()*1000);
-// ...🌊 class object..새로 대체안되고, id값 부여해서 새로 추가되게 하기
-class Note {
-    constructor(a,b){
-        this.title = a;
-        this.body = b;
-        this.id = Math.floor(Math.random()*1000);
-        console.log(this.id);
-    }
-}
+
 
 /*🍀 🦄js 1 DOMContentLoaded
 load – DOM 트리를 만드는 게 완성+ 이미지등등 모두 불러오는 것이 끝났을 때 발생
 DOMContentLoaded – 브라우저가 HTML을 전부 읽고 DOM 트리를 완성하는 즉시 발생
 unload / beforeunload  – 사용자가 페이지를 떠날 때 발생
  */
+
 //🦄js 1-2 .focus() : open했을때 input에 커서가 깜빡이면서 이미 타이핑할 준비가 되어있음
 
 document.addEventListener("DOMContentLoaded", ()=>{
     titleInput.focus();
 });
 
-
 //🍀 2. title, note - create
 submitBtn.addEventListener('click',run_first);
+
 
 // length check , noteAlert
 function run_first(e) {
@@ -65,6 +56,7 @@ function run_first(e) {
 
     noteAlert.innerHTML='';
 
+    /*🦄 way 2 :  if (titleInput.value && noteInput.value)  : value가 존재해서 true */
     if(titleInput.value.length > 0 && noteInput.value.length > 0 ){
         run();
     }else{
@@ -72,23 +64,36 @@ function run_first(e) {
     }
 }
 
+
 // run 
 function run(e){  
-    
-
     titleInput.focus();
 
     // 🦄js 0
     let newNote = new Note(titleInput.value,noteInput.value);
     console.log(newNote)
        
-    addNoteToList(newNote);    
+    addNoteToList(newNote);     ////🍉js 2-2.
  
     titleInput.value="" ;
     noteInput.value="" ;       
 }
 
-//🌱js 2-2. note - create, innerHTML
+
+/* 🍀 🦄js 0 class , 🍄알고리즘, class이용해서 밖으로 데이터 빼서,  object생성
+🦄 Math.floor(Math.random()*1000);
+...🌊 class object..새로 대체안되고, id값 부여해서 새로 추가되게 하기 */
+class Note {
+    constructor(p_a,p_b){
+        this.title = p_a;
+        this.body = p_b;
+        this.id = Math.floor(Math.random()*1000);
+        console.log(this.id);
+    }
+}
+
+
+//🍉js 2-2. note - create, innerHTML
 function addNoteToList(a_newNote) {
     
     let note = document.createElement('div');
@@ -138,7 +143,7 @@ function addNoteToList(a_newNote) {
 */
 
 
-// 🍉js 6
+// 🍉js 6. detail - modal create
 function activeModal(a_newNote) {    
     document.querySelector('.modal_title').innerHTML= `${a_newNote.title}`;
     document.querySelector('.modal_content').innerHTML = `${a_newNote.body}`;
@@ -160,7 +165,7 @@ function run_clearall() {
    window.location.reload();
 }
 
-
+// 
 
 
 
